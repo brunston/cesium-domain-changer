@@ -4,7 +4,6 @@
 
 import fileinput
 import re
-import sys
 
 # get the information from the conf file
 conf = open('fields.conf', 'r')
