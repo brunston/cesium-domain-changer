@@ -4,18 +4,18 @@ nginx:
     - letsencrypt
     - web
   environment:
-    - MY_DOMAIN_NAME=example.com
+    - MY_DOMAIN_NAME=cftdi.ml
     - APP_PORT_80_TCP_ADDR=web
     - APP_PORT_80_TCP_PORT=5000
   # restart: always
-  ports: 
+  ports:
     - "80:80"
     - "443:443"
   volumes_from:
     - letsencrypt
 letsencrypt:
   image: quay.io/letsencrypt/letsencrypt:latest
-  command:  bash -c "sleep 6 && certbot certonly --standalone -d example.com --text --agree-tos --email test@example.com --server https://acme-v01.api.letsencrypt.org/directory --rsa-key-size 4096 --verbose --keep-until-expiring --standalone-supported-challenges http-01"
+  command:  bash -c "sleep 6 && certbot certonly --standalone -d cftdi.ml --text --agree-tos --email cescml@outlook.com --server https://acme-v01.api.letsencrypt.org/directory --rsa-key-size 4096 --verbose --keep-until-expiring --standalone-supported-challenges http-01"
   entrypoint: ""
   volumes:
     - /etc/letsencrypt
