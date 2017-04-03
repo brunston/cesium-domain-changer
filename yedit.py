@@ -1,6 +1,5 @@
 # changes the docker-compose.yml based on inputs in fields.conf
 # brunston apr 2017
-# mit license
 
 import fileinput
 import re
